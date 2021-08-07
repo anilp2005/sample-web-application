@@ -40,8 +40,8 @@ pipeline{
                 sh 'docker build . -t anilp2005/devops-training:$Docker_tag'
                 withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
     
-                sh '''docker login -u anilp2005 -p $docker_password
-                docker push anilp2005/devops-training:$Docker_tag
+                sh 'docker login -u anilp2005 -p $docker_password'
+                sh  'docker push anilp2005/devops-training:$Docker_tag'
 		'''
                 }
                 
