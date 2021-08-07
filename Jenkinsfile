@@ -42,8 +42,7 @@ pipeline{
     
                 sh 'docker login -u anilp2005 -p $docker_password'
                 sh  'docker push anilp2005/devops-training:$Docker_tag'
-		'''
-                }
+		}
                 
 			      }
 		      }
