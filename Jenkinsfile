@@ -37,6 +37,7 @@ pipeline{
               stage('build'){
 		      steps {
 			      script{
+		sh 'cp -r ../Jenkins-Training@tmp/target .'
                 sh 'docker build . -t anilp2005/devops-training:$Docker_tag'
                 withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
     
