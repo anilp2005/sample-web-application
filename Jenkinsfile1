@@ -43,7 +43,7 @@ pipeline{
                 {
               steps{
                   script{
-		  sh 'cp -r ../Jenkins-Training/target .'
+		  sh 'cp -r ../Jenkins-Training@2/target .'
                   sh 'docker build . -t anilp2005/jenkins-training:$Docker_tag'
 		  withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {			    
 				  sh 'docker login -u anilp2005 -p $docker_password'
